@@ -15,7 +15,7 @@ class ProductController extends Controller
 // PUT /products/{id}: Update a product
 // DELETE /products/{id}: Delete a product
     function listProducts(Request $request){
-        $data = Product::get();
+        $data = Product::paginate(5);
         return view("index",["products"=>$data]);
 
     }
